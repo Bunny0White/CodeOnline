@@ -1,0 +1,97 @@
+.settings-card {
+    background: #282828;
+    padding: 24px;
+    border-radius: 10px;
+    border: 1px solid #3a3a3a;
+    margin-bottom: 20px;
+}
+
+.settings-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.settings-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.settings-actions button {
+    background: #333;
+    border: 1px solid #444;
+    padding: 10px 16px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.settings-actions button:hover {
+    background: #404040;
+    border-color: #555;
+}
+
+.muted {
+    color: #888;
+    font-size: 13px;
+    margin: 6px 0;
+}
+
+.link-btn {
+    display: inline-block;
+    background: #1e5caf;
+    padding: 10px 16px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+/* Style général du select */
+#languageSelect {
+    width: 200px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #1f1f1f;
+    color: #fff;
+    appearance: none; /* Supprime l’apparence native */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: border 0.2s, background-color 0.2s;
+}
+
+/* Hover et focus */
+#languageSelect:hover,
+#languageSelect:focus {
+    border-color: #3a9ad9;
+    background-color: #2a2a2a;
+}
+
+/* Flèche personnalisée */
+#languageSelect {
+    background-image: url("data:image/svg+xml,%3Csvg fill='%23ffffff' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+/* Options */
+#languageSelect option {
+    background-color: #2a2a2a;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+#languageSelect option:hover {
+    background-color: #3a9ad9;
+}

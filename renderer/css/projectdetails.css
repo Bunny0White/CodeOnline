@@ -1,0 +1,185 @@
+#projectDetails {
+    padding: 20px;
+    color: #fff;
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.details-header button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #1e5caf;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.2s;
+    margin-left: 8px;
+}
+
+.details-header button:hover {
+    background: #2870d1;
+}
+
+.details-actions button {
+    margin-left: 8px;
+}
+
+.details-body {
+    background: #282828;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.project-favicon img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.project-meta-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.project-meta-list li {
+    margin-bottom: 6px;
+}
+
+/* Overlay général pour la modal */
+#projectModalOverlay,
+#deleteModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Contenu de la modal */
+#projectModal,
+#deleteModal {
+    background: #282828;
+    padding: 24px 32px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    color: #fff;
+    animation: fadeInModal 0.3s ease-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Titres et textes */
+#projectModal h2,
+#projectModal h3,
+#deleteModal h2,
+#deleteModal h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 20px;
+}
+
+#projectModal p,
+#deleteModal p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Inputs et textarea pour Project modal */
+#projectModal input,
+#projectModal textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #1e1e1e;
+    color: #fff;
+    font-size: 14px;
+}
+
+#projectModal textarea {
+    resize: vertical;
+}
+
+/* Boutons de la modal */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-actions button {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.modal-actions button:hover {
+    opacity: 0.9;
+}
+
+/* Boutons spécifiques */
+#cancelProjectBtn,
+#cancelDeleteBtn {
+    background: #444;
+    color: #fff;
+}
+
+#createProjectConfirmBtn {
+    background: #1e5caf;
+    color: #fff;
+}
+#createProjectConfirmBtn:hover {
+    background: #2870d1;
+}
+
+#deleteProjectBtn,
+#confirmDeleteBtn {
+    background: #d12828;
+    color: #fff;
+}
+#deleteProjectBtn:hover,
+#confirmDeleteBtn:hover {
+    background: #af1e1e;
+}
+
+
+/* Prévisualisation du chemin */
+.path-preview {
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.path-preview code {
+    background: #1e1e1e;
+    padding: 4px 6px;
+    border-radius: 4px;
+}

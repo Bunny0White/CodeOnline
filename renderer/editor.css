@@ -1,0 +1,438 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #202020;
+    color: #e0e0e0;
+    overflow: hidden;
+}
+
+/* Top Bar */
+#topBar {
+    height: 48px;
+    background: #282828;
+    border-bottom: 1px solid #3a3a3a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+#projectTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#projectTitle::before {
+    content: '📄';
+    font-size: 18px;
+}
+
+.top-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.top-actions button {
+    padding: 8px 16px;
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.top-actions button:hover {
+    background: #404040;
+    color: #fff;
+    border-color: #555;
+}
+
+.top-actions button.primary {
+    background: #1e5caf;
+    border-color: #1e5caf;
+    color: #fff;
+}
+
+.top-actions button.primary:hover {
+    background: #2870d1;
+    border-color: #2870d1;
+}
+
+#editorContainer {
+    display: flex;
+    height: calc(100vh - 48px);
+}
+
+/* Sidebar gauche - File Explorer */
+#fileExplorerContainer {
+    width: 260px;
+    background: #282828;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #3a3a3a;
+}
+
+#fileExplorerContainer h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+#fileExplorer {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 16px;
+}
+
+#fileExplorer::-webkit-scrollbar {
+    width: 6px;
+}
+
+#fileExplorer::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 3px;
+}
+
+#fileExplorer::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+
+#fileExplorer::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.file-item {
+    padding: 10px 12px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    transition: all 0.2s;
+    font-size: 13px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.file-item::before {
+    content: '📄';
+    font-size: 14px;
+}
+
+.file-item.active {
+    background: #1e5caf;
+    border-color: #1e5caf;
+    color: #fff;
+}
+
+.file-item:hover:not(.active) {
+    background: #252525;
+    border-color: #444;
+    color: #fff;
+}
+
+/* File actions */
+.file-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid #3a3a3a;
+}
+
+.file-actions button {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: #333;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.file-actions button:hover {
+    background: #404040;
+    border-color: #555;
+    color: #fff;
+}
+
+#saveFileBtn {
+    background: #1e5caf;
+    border-color: #1e5caf;
+    color: #fff;
+}
+
+#saveFileBtn:hover {
+    background: #2870d1;
+    border-color: #2870d1;
+}
+
+#backHubBtn {
+    background: #1a1a1a;
+}
+
+/* Zone de composition */
+#compositionArea {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#canvasArea {
+    flex: 1;
+    background: #1a1a1a;
+    border: 2px dashed #3a3a3a;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+}
+
+#canvasArea::-webkit-scrollbar {
+    width: 8px;
+}
+
+#canvasArea::-webkit-scrollbar-track {
+    background: #151515;
+    border-radius: 4px;
+}
+
+#canvasArea::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+#canvasArea::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#canvasArea.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvasArea.empty::before {
+    content: '🎨 Glissez des blocs ici ou double-cliquez pour commencer';
+    color: #555;
+    font-size: 14px;
+    text-align: center;
+}
+
+.canvas-block {
+    background: #282828;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: move;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.canvas-block:hover {
+    border-color: #1e5caf;
+    box-shadow: 0 4px 12px rgba(30, 92, 175, 0.2);
+}
+
+.canvas-block.selected {
+    border-color: #1e5caf;
+    box-shadow: 0 0 0 2px rgba(30, 92, 175, 0.3);
+}
+
+.block-controls {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.canvas-block:hover .block-controls {
+    opacity: 1;
+}
+
+.block-controls button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 4px;
+    background: #1a1a1a;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.block-controls button:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* Sidebar droite - Block Library */
+#blockLibrary {
+    width: 280px;
+    background: #282828;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #3a3a3a;
+}
+
+#blockLibrary h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+#blocksTabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+#blocksTabs button {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    background: #1a1a1a;
+    color: #888;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+#blocksTabs button:hover {
+    background: #252525;
+    color: #ccc;
+}
+
+#blocksTabs button.active {
+    background: #1e5caf;
+    border-color: #1e5caf;
+    color: #fff;
+}
+
+#blocksList {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#blocksList::-webkit-scrollbar {
+    width: 6px;
+}
+
+#blocksList::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 3px;
+}
+
+#blocksList::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+
+.block-item {
+    padding: 12px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 6px;
+    cursor: grab;
+    transition: all 0.2s;
+    font-size: 13px;
+    color: #ccc;
+}
+
+.block-item:hover {
+    background: #252525;
+    border-color: #1e5caf;
+    color: #fff;
+    transform: translateX(4px);
+}
+
+.block-item:active {
+    cursor: grabbing;
+}
+
+.block-item-preview {
+    margin-top: 8px;
+    padding: 8px;
+    background: #151515;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #666;
+    border-left: 2px solid #1e5caf;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.empty-state-text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    #fileExplorerContainer {
+        width: 220px;
+    }
+    
+    #blockLibrary {
+        width: 240px;
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Configuration initiale</title>
+<style>
+body{font-family:sans-serif;margin:40px;}
+button{padding:10px 20px;cursor:pointer;margin-right:10px;}
+#window-bar{display:flex;justify-content:flex-end;background:#333;padding:5px;}
+#window-bar button{background:none;color:#fff;border:none;font-size:16px;cursor:pointer;margin-left:5px;}
+</style>
+</head>
+<body>
+<div id="window-bar">
+    <button id="minimizeBtn">_</button>
+    <button id="closeBtn">X</button>
+</div>
+<h2>Bienvenue ! Choisissez le dossier de vos projets :</h2>
+<input type="text" id="folderPath" readonly placeholder="Cliquez sur parcourir..." />
+<button id="browseBtn">Parcourir</button>
+<button id="nextBtn">Suivant</button>
+
+<script src="../renderer/first_time.js"></script>
+<script>
+document.getElementById('closeBtn').addEventListener('click',()=>window.electronAPI.closeWindow());
+document.getElementById('minimizeBtn').addEventListener('click',()=>window.electronAPI.minimizeWindow());
+</script>
+</body>
+</html>

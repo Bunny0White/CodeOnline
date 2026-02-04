@@ -1,0 +1,30 @@
+{
+  "name": "codeonline",
+  "version": "1.0.0",
+  "description": "Application Code Online",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^24.0.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.3"
+  },
+  "build": {
+    "appId": "com.onlinecorps.codeonline",
+    "productName": "CodeOnline",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

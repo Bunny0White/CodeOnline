@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CodeOnline Editor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../renderer/editor.css">
+</head>
+<body>
+
+<div id="topBar">
+    <h3 id="projectTitle">Mon Projet</h3>
+    <div class="top-actions">
+        <button id="saveFileBtn" class="primary">💾 Sauvegarder</button>
+        <button id="backHubBtn">← Retour au Hub</button>
+    </div>
+</div>
+
+<div id="editorContainer">
+    <!-- Sidebar gauche : File Explorer -->
+    <div id="fileExplorerContainer">
+        <h3>📁 Fichiers du projet</h3>
+        <div id="fileExplorer">
+            <div class="file-item active">index.html</div>
+            <div class="file-item">style.css</div>
+            <div class="file-item">script.js</div>
+        </div>
+        <div class="file-actions">
+            <button id="newFileBtn">➕ Nouveau fichier</button>
+            <button id="deleteFileBtn">🗑️ Supprimer</button>
+        </div>
+    </div>
+
+    <!-- Zone de composition centrale -->
+    <div id="compositionArea">
+        <div id="canvasArea" class="empty">
+            <!-- Les blocs seront ajoutés ici dynamiquement -->
+        </div>
+    </div>
+
+    <!-- Sidebar droite : Bibliothèque de blocs -->
+    <div id="blockLibrary">
+        <h3>🧩 Blocs disponibles</h3>
+        <div id="blocksTabs">
+            <button data-type="headers" class="active">Headers</button>
+            <button data-type="body">Body</button>
+            <button data-type="footers">Footers</button>
+        </div>
+        <div id="blocksList">
+            <!-- Headers -->
+            <div class="block-item" data-category="headers">
+                <strong>Hero Section</strong>
+                <div class="block-item-preview">Large header with title and CTA</div>
+            </div>
+            <div class="block-item" data-category="headers">
+                <strong>Navigation Bar</strong>
+                <div class="block-item-preview">Responsive menu with links</div>
+            </div>
+            <div class="block-item" data-category="headers">
+                <strong>Simple Header</strong>
+                <div class="block-item-preview">Basic header with logo</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../renderer/editor.js"></script>
+
+</body>
+</html>

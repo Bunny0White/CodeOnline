@@ -1,0 +1,92 @@
+#projectModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#projectModal {
+    background: #1f1f1f;
+    width: 460px;
+    max-width: 90%;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+#projectModal h2 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+}
+
+#projectModal label {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+#projectModal input,
+#projectModal textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #2a2a2a;
+    color: #fff;
+    font-size: 13px;
+}
+
+#projectModal textarea {
+    resize: none;
+    height: 80px;
+}
+
+.path-preview {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.path-preview code {
+    display: block;
+    margin-top: 4px;
+    background: #2a2a2a;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: #7fd0ff;
+    word-break: break-all;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+#cancelProjectBtn {
+    background: #333;
+    color: #fff;
+}
+
+#createProjectConfirmBtn {
+    background: #1e5caf;
+    color: #fff;
+}
